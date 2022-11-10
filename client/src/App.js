@@ -40,8 +40,11 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Header/>
+        <div className='top_header'>
+        <Header/>
             <NavBar/>
+        </div>
+            
             <Routes>
                 {user.isAuth && adminRoutes.map(m =>
                     <Route key={m.path} path={m.path} element={m.element}/>

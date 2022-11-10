@@ -23,7 +23,9 @@ class CategoryController {
 
     async getAll(req, res, next) {
         try {
-            const categories = await  Category.findAll()
+            const categories = await  Category.findAll({order:[
+                ['id','asc']
+            ]})
             return res.json(categories)
         } catch (e) {
             next(e)

@@ -12,6 +12,9 @@ import {fetchCategories} from '../http/shopAPI'
 const Main = observer(() => {
     const {good} = useContext(Context)
 
+    useEffect(()=>{
+        fetchCategories().then(data=>good.setCategories(data))
+    },[])
 
     return (
             <div className="main">

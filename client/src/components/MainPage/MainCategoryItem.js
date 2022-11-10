@@ -8,7 +8,7 @@ const MainCategoryItem = observer((props) => {
     return (
         <a href={"/catalog/category/" + (props.category.id)} className="catalog-item">
 
-            <img src={baseAPIURL + "/" + (props.category.img)} alt={props.category.name}/>
+            <img src={process.env.REACT_APP_API_URL + "/" + (props.category.img)} alt={props.category.name}/>
             <span>{props.category.name}</span>
             <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

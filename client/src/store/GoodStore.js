@@ -1,3 +1,5 @@
+import { makeAutoObservable } from "mobx"
+
 export default class GoodStore {
     constructor() {
         this._categories = []
@@ -106,6 +108,7 @@ export default class GoodStore {
             let h = timeNow.getHours(), m = timeNow.getMinutes();
             return (h === 8 && m >= 45) || (h > 8 && h < 18);
         }
+        makeAutoObservable(this)
     }
 
     setCategories(categories) {
