@@ -1,5 +1,4 @@
-import { makeAutoObservable } from "mobx"
-
+import { makeAutoObservable,toJS } from "mobx"
 export default class GoodStore {
     constructor() {
         this._categories = []
@@ -60,33 +59,10 @@ export default class GoodStore {
             }
         ]
 
-        this._mainSliderSlides = [
-            {
-                id: 1,
-                topText: 'В рамках деятельности компания осуществляет:',
-                img: 'https://iself.shop/upload/iblock/b48/wwxkm983bwtp7xj1oq0ptlqcdpi3htsy.jpg',
-                title: 'Монтаж оборудования и сервисное обслуживание',
-                p: 'Комплектация MAXI имеет огромную популярность среди клиентов благодаря своей надёжности, функциональности и быстрой окупаемости. Лучшие комплектующие от ведущих мировых производителей. Гарантийное и постгарантийное обслуживание. Стоимость комплекта оборудования для вашей мойки рассчитывается индивидуально ...',
-                link: '/'
-            },
-            {
-                id: 2,
-                topText: '',
-                img: 'https://iself.shop/upload/iblock/4c8/lqwuatovl71pvq5ewdcwyazbtd2k77jh/nasosy.jpg',
-                title: 'Насосы высокого давления',
-                p: 'Наши специалисты помогут выбрать помпу высокого давления под Ваши потребности, мы на практике используем данное оборудование, знаем все его плюсы и минусы. К примеру, в данной сфере наиболее приемлемыми считаются высокотемпературные плунжерные насосы для перекачки горячей воды с высоким содержанием солей натрия, аммония или углекислоты. Понять, какая модель лучше соответствует по  типу циркулирующей жидкости помогут краткие характеристики, представленные в каталоге на сайте, или профессиональные консультанты интернет-магазина Iself.shop.',
-                link: '/'
-            },
-            {
-                id: 3,
-                topText: 'В рамках деятельности компания осуществляет:',
-                img: 'https://iself.shop/upload/iblock/b48/wwxkm983bwtp7xj1oq0ptlqcdpi3htsy.jpg',
-                title: 'Монтаж оборудования и сервисное обслуживание',
-                p: 'Комплектация MAXI имеет огромную популярность среди клиентов благодаря своей надёжности, функциональности и быстрой окупаемости. Лучшие комплектующие от ведущих мировых производителей. Гарантийное и постгарантийное обслуживание. Стоимость комплекта оборудования для вашей мойки рассчитывается индивидуально ...',
-                link: '/'
-            }
-        ]
-
+        this._mainPageSlider={
+            slides:[]
+        }
+        
         this._mainPartnersSliderSlides = [
             {
                 id: 1,
@@ -111,6 +87,10 @@ export default class GoodStore {
         makeAutoObservable(this)
     }
 
+    setMainPageSlider(slider) {
+        this._mainPageSlider = toJS(slider)
+    }
+    
     setCategories(categories) {
         this._categories = categories
     }
@@ -119,16 +99,14 @@ export default class GoodStore {
         this._goods = goods
     }
 
-    setMainSliderSlides(slides) {
-        this._mainSliderSlides = slides
-    }
-
+   
     setSelfServices(services) {
         this._selfServices = services
     }
 
-    setMainPartnersSliderSlides(slides) {
-        this._mainPartnersSliderSlides = slides
+
+    get mainPageSlider(){
+        return this._mainPageSlider
     }
 
     get categories() {
@@ -139,9 +117,7 @@ export default class GoodStore {
         return this._goods
     }
 
-    get mainSliderSlides() {
-        return this._mainSliderSlides
-    }
+
 
     get selfServices() {
         return this._selfServices

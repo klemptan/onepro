@@ -2,6 +2,15 @@ const path = require('path')
 const {Category} = require('../models/models')
 const uuid = require("uuid");
 class CategoryController {
+
+    async insertTranscript(req,res,next) {
+        const {transcript,name} = req.body
+        const category = await Category.findOne({where:{name}})
+        category.transcript = transcript
+        category.save()
+        return res.json(category)
+    }
+
     async create(req, res, next) {
         try {
             const {name, transcript} = req.body

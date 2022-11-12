@@ -827,4 +827,26 @@ aside ul li .d-flex img {
   width: calc(100% - 255px);
   margin-left: auto;
   border-left: 1px solid #d8d8d8;
+}
+
+.breadcrumbs {
+  position: relative;
+  padding: 20px 30px;
+  font-size: 12px;
+  line-height: 19px;
+  color: #9e9e9e;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d8d8d8;
+}
+.breadcrumbs .breadcrumbs-item {
+  margin-right: 7px;
+  display: flex;
+}
+.breadcrumbs span.delimiter-slash {
+  margin-right: 7px;
+  display: inline-block;
+}
+.breadcrumbs span.last-item {
+  color: #186ddf;
 }/*# sourceMappingURL=App.css.map */

@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useNavigate} from "react-router-dom";
-import {baseAPIURL} from "../../http";
 import {observer} from "mobx-react-lite";
 
 const MainCategoryItem = observer((props) => {
-    const navigator = useNavigate()
+
     return (
         <a href={"/catalog/category/" + (props.category.id)} className="catalog-item">
 

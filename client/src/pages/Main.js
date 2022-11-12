@@ -1,24 +1,24 @@
 import React, {useContext, useEffect} from 'react';
-import MainPageSlider from "../components/MainPage/MainPageSlider";
-import MainCategoryItem from "../components/MainPage/MainCategoryItem";
 import MainCategoryList from "../components/MainPage/MainCategoryList";
-import MainSelfServiceList from "../components/MainPage/MainSelfServiceList";
 import MainPartnersSlider from "../components/MainPage/MainPartnersSlider";
-import Footer from "../components/footer";
+import SliderTop from '../components/MainPage/sliderTop'
 import {observer} from 'mobx-react-lite'
 import {Context} from '../index'
-import {fetchCategories} from '../http/shopAPI'
+import {fetchCategories, fetchSlider} from '../http/shopAPI'
+
+
 
 const Main = observer(() => {
     const {good} = useContext(Context)
 
     useEffect(()=>{
         fetchCategories().then(data=>good.setCategories(data))
+        fetchSlider(1).then(data=>good.setMainPageSlider(data))
     },[])
 
     return (
             <div className="main">
-                <MainPageSlider/>
+                <SliderTop/>
                 <MainCategoryList/>
 
                 <div className="equipments">

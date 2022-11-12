@@ -1,19 +1,16 @@
 import React, { useContext, useEffect } from 'react';
 import SideBar from "../components/CategoryPage/SideBar";
 import MyBreadcrumbs from "../components/CategoryPage/MyBreadcrumbs";
-import { useParams } from "react-router-dom";
-import { fetchCategories, fetchOneCategory } from "../http/shopAPI";
+import { fetchCategories } from "../http/shopAPI";
 import { Context } from "../index";
-import CategoryChilds from "../components/CategoryPage/CategoryChilds";
 import GoodsList from "../components/CategoryPage/GoodsList";
 
 const Catalog = () => {
-    const params = useParams()
     const { good } = useContext(Context)
     let category = null;
     const breadcrumbsLinks = [
-        { title: 'Главная', link: '/' },
-        { title: 'Каталог', link: '/catalog' },
+        { title: 'Главная', link: '/', active: false },
+        { title: 'Каталог', link: '/catalog', active: true },
     ]
     useEffect(() => {
         fetchCategories().then(data => good.setCategories(data))
@@ -21,15 +18,15 @@ const Catalog = () => {
 
         var isOnDiv = false;
         const sidebar_div = document.getElementById("mCSB_1_container")
-        sidebar_div.addEventListener("mouseenter", function(  ) {
-            isOnDiv=true;
+        sidebar_div.addEventListener("mouseenter", function () {
+            isOnDiv = true;
             console.log('in')
         });
-        sidebar_div.addEventListener("mouseleave", function(  ) {isOnDiv=false;console.log('out')});
+        sidebar_div.addEventListener("mouseleave", function () { isOnDiv = false; console.log('out') });
 
-       
+
         window.addEventListener('scroll', (e) => {
-            if(isOnDiv) {
+            if (isOnDiv) {
                 sidebar_div.style.top = `-${sidebar_div.pageYOffset}px`
             }
         })
@@ -42,16 +39,6 @@ const Catalog = () => {
             <div className="main">
                 <div className="update-main">
                     <MyBreadcrumbs links={breadcrumbsLinks} />
-                    {/* {category ?
-                        <div>
-                            <div className="heading">
-                                <h1> {category.name} </h1>
-                            </div>
-                            <CategoryChilds />
-                        </div>
-                        :
-                        <></>
-                    } */}
                     <GoodsList />
                 </div>
             </div>

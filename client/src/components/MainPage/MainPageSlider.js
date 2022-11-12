@@ -1,16 +1,17 @@
 import React, {useContext} from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import {Navigation, Pagination, Scrollbar} from "swiper";
 import {Context} from "../../index";
+import {observer} from 'mobx-react-lite'
+import {Navigation,Pagination} from 'swiper'
 
-const MainPageSlider = () => {
+const MainPageSlider = observer(() => {
 
     const {good} = useContext(Context)
 
     return (
         <Swiper
-            modules={[Pagination,Navigation,Scrollbar]}
+            modules={[Pagination,Navigation]}
             className="main-slider"
             spaceBetween={50}
             slidesPerView={1}
@@ -32,7 +33,7 @@ const MainPageSlider = () => {
                         <h3 className="top-main-slider__title">{m.title}</h3>
 
                         <p>
-                            {m.p}
+                            {m.description}
                         </p>
                         <a className="more" href={m.link}>
                             <span>подробнее</span>
@@ -51,6 +52,6 @@ const MainPageSlider = () => {
 
         </Swiper>
     );
-};
+});
 
 export default MainPageSlider;
