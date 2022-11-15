@@ -27,14 +27,27 @@ const Slide = sequelize.define('slide',{
 const Brand = sequelize.define('brand',{
     id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
     name:{type:DataTypes.STRING, unique:true},
+    logo:{type:DataTypes.STRING},
+    description:{type:DataTypes.TEXT}
 })
 
 const Good = sequelize.define('good',{
     id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
     article:{type:DataTypes.STRING},
     model:{type:DataTypes.STRING},
-    link:{type:DataTypes.STRING},
     price:{type:DataTypes.INTEGER},
+    description:{type:DataTypes.TEXT}
+})
+
+const GoodImage = sequelize.define('good_image',{
+    id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
+    img:{type:DataTypes.STRING}
+})
+
+const GoodDetail = sequelize.define('good_detail',{
+    id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
+    name:{type:DataTypes.STRING},
+    description:{type:DataTypes.TEXT},
 })
 
 const CategoryBrand = sequelize.define('category_brand',{
@@ -53,7 +66,11 @@ Good.belongsTo(Brand)
 Category.belongsToMany(Brand,{through:CategoryBrand})
 Brand.belongsToMany(Category,{through:CategoryBrand})
 
+Good.hasMany(GoodImage)
+GoodImage.belongsTo(Good)
 
+Good.hasMany(GoodDetail)
+GoodDetail.belongsTo(Good)
 
 module.exports = {
     Category,
@@ -61,5 +78,7 @@ module.exports = {
     Slide,
     Good,
     Brand,
-    CategoryBrand
+    CategoryBrand,
+    GoodImage,
+    GoodDetail
 }

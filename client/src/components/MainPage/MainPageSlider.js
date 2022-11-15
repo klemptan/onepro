@@ -19,7 +19,7 @@ const MainPageSlider = observer(() => {
             pagination={{ clickable: true }}
         >
             {good.mainSliderSlides.map(m=>
-                <SwiperSlide key={m.id}>
+                <SwiperSlide key={m.id} style={{width:463}}>
                     <div className="slider__bg"
                          style={{
                              backgroundImage:`url('${m.img}')`,

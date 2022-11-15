@@ -1,4 +1,5 @@
-import { makeAutoObservable,toJS } from "mobx"
+import { makeAutoObservable, toJS } from "mobx"
+import { Good } from "../models/Good"
 export default class GoodStore {
     constructor() {
         this._categories = []
@@ -27,42 +28,17 @@ export default class GoodStore {
             brands: []
         },]
 
-        this._goods = [
+        this._goods = { count: 0, rows: [] }
+        this._brands = [
             {
-                id: 1,
-                categoryId:1,
-                img: 'https://iself.shop/upload/resize_cache/iblock/e4e/200_200_1/0mpujfz7ddxkt1jce17io0e4lir48win.jpg',
-                model: 'NHDP1420CWR',
-                title: 'Насос высокого давления',
-                shortDesctiption: '200 бар / 14 л./ мин',
-                vendor: 'HAWK',
-                article: '1.905-683.0',
-                price: 24687,
-                description: `
-                    Насос <span style="color: #0000ff;">Hawk NHDP1420CWR </span>итальянского производства. Латунная головка, керамические поршни, алюминиевый корпус. Никелированный клапанный блок и специальные уплотнения для защиты от коррозии и воздействия химических веществ. <br>
-                    <span style="color: #ff0000;">Применение</span>: аппараты АВД, Автомойки самообслуживания.Насос предназначен для перекачивания жидкостей с низкой вязкостью: чистой пресной воды или смеси воды и моющих средств. При соединении помпы с электродвигателем, мощность двигателя должна быть больше мощности насоса. <br>
-                    При соединении помпы с двигателем внутреннего сгорания, мощность двигателя должна быть больше на 30% (минимум). <br>
-                    <span style="color: #ff0000;">Особенности:</span><br>
-                    максимальное давление 200 бар.<br>
-                     расход 14 л/мин.<br>
-                    мощность 5,3 кВт.<br>
-                    частота оборотов вала 1450 об/мин.<br>
-                    температура воды 65 градусов.<br>
-                    диаметр вала 24 мм.<br>
-                    производство Италия.`,
-                details:[
-                    {name:'Производительность',description:'840 л/ч'},
-                    {name:'Производительность',description:'840 л/ч'},
-                    {name:'Производительность',description:'840 л/ч'},
-                    {name:'Производительность',description:'840 л/ч'},
-                ]
-            }
-        ]
+                id: 0,
+                name: ''
+            }]
 
-        this._mainPageSlider={
-            slides:[]
+        this._mainPageSlider = {
+            slides: []
         }
-        
+
         this._mainPartnersSliderSlides = [
             {
                 id: 1,
@@ -79,33 +55,75 @@ export default class GoodStore {
             }
         ]
 
+        this._good = new Good()
+
         this._checkOpen = () => {
             let timeNow = new Date();
             let h = timeNow.getHours(), m = timeNow.getMinutes();
             return (h === 8 && m >= 45) || (h > 8 && h < 18);
         }
+
+        this._breadcrumbsLinks = [{ title: 'Главная', link: '/', active: false },
+        { title: 'Каталог', link: '/catalog', active: true }]
+        
         makeAutoObservable(this)
     }
+
+    setBreadcrumbsLinks(link){
+        this._breadcrumbsLinks = link
+    }
+    
 
     setMainPageSlider(slider) {
         this._mainPageSlider = toJS(slider)
     }
-    
+
     setCategories(categories) {
         this._categories = categories
     }
 
     setGoods(goods) {
-        this._goods = goods
+        this._goods.count=goods.count
+        goods.rows.map((m)=>{
+            this._goods.rows.push(new Good(m))
+        })
     }
 
-   
+    setBrands(brands) {
+        this._brands = brands
+    }
+
     setSelfServices(services) {
         this._selfServices = services
     }
 
+    getBrandNameById(id){
+        for(var item of this._brands){
+            if(item.id == id){
+                return item.name;
+            }
+        }
+        return '';
+    }
 
-    get mainPageSlider(){
+    getCategoryNameById(id){
+        for(var item of this._categories){
+            if(item.id == id){
+                return item.name;
+            }
+        }
+        return '';
+    }
+
+    setGood(good){
+        this._good = new Good(good)
+    }
+
+    get good(){
+        return this._good
+    }
+
+    get mainPageSlider() {
         return this._mainPageSlider
     }
 
@@ -117,7 +135,9 @@ export default class GoodStore {
         return this._goods
     }
 
-
+    get brands() {
+        return this._brands
+    }
 
     get selfServices() {
         return this._selfServices
@@ -129,5 +149,9 @@ export default class GoodStore {
 
     get CheckOpen() {
         return this._checkOpen()
+    }
+
+    get breadcrumbsLinks(){
+        return this._breadcrumbsLinks
     }
 }

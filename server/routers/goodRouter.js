@@ -3,6 +3,7 @@ const router = new Router()
 const GoodController = require('../controllers/goodController')
 
 router.get('/',GoodController.getAll)
-router.post('/parse',GoodController.parsing)
+router.get('/:id',GoodController.getOne)
+router.post('/parseGoods',GoodController.parseGoods)
 
 module.exports = router

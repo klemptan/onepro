@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {observer} from 'mobx-react-lite'
+import { Context } from '../../index';
 
-const MyBreadcrumbs = (props) => {
-    console.log(props)
+const MyBreadcrumbs = observer((props) => {
+    const {good} = useContext(Context)
     return (
         <div className="breadcrumbs">
             {
-                props.links.map((m, index) => {
+                good.breadcrumbsLinks.map((m, index) => {
                     return <div key={index} className="breadcrumbs-item" id={"bx_breadcrumb_" + (index)}>
                         {index>0 ?
                             <span className="delimiter-slash">/</span> : <></>}
                         {m.active ?
-                            <span className="last-item">{m.title}</span>
+                            <span className="last-item">{m.title.replaceAll('<br/>','').replaceAll('<br>','')}</span>
                             :
                             <a href={m.link} title={m.title}>
 
@@ -24,6 +26,6 @@ const MyBreadcrumbs = (props) => {
 
         </div>
     );
-};
+});
 
 export default MyBreadcrumbs;

@@ -1,3 +1,4 @@
+import { Good } from "../models/Good";
 import {$host} from "./index";
 
 export const createCategory = async (category)=>{
@@ -15,19 +16,23 @@ export const fetchOneCategory = async (id)=>{
     return data
 }
 
-export const fetchGoods = async ()=>{
-    const {data} = await $host.get('api/good')
+export const fetchGoods = async (categoryId)=>{
+    const {data} = await $host.get('api/good?categoryId='+(categoryId||0))
     return data
 }
 
 export const fetchOneGood = async (id)=>{
     const {data} = await $host.get('api/good/'+id)
-    return data
+    return new Good(data)
 }
 
 
 export const fetchSlider = async(id)=>{
     const {data} = await $host.get('api/slider/'+id)
-    console.log(data)
+    return data
+}
+
+export const fetchBrands = async ()=>{
+    const {data} = await $host.get('api/brand/')
     return data
 }
