@@ -8,6 +8,11 @@ body {
   font-weight: 400;
   font-family: "Roboto", sans-serif;
 }
+body h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
 body a {
   background-color: transparent;
   color: inherit;
@@ -1782,4 +1787,598 @@ aside ul li .d-flex img {
   border-radius: 0;
   height: 50px;
   position: relative;
+}
+
+.brands-title {
+  padding: 30px;
+}
+.brands-title h1 {
+  font-weight: 500;
+}
+
+.brands-items {
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.brands-items .brands-item {
+  width: calc(16.66% - 12px);
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding: 5px;
+  transition: 0.2s ease-in;
+}
+.brands-items .brands-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.top-brand-info {
+  padding: 0 30px;
+}
+.top-brand-info .top-brand-desc-top {
+  display: flex;
+  align-items: center;
+}
+.top-brand-info .top-brand-desc-top img {
+  margin-right: 20px;
+}
+.top-brand-info .top-brand-desc-bottom {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-size: 15px;
+  line-height: 22px;
+  padding-bottom: 20px;
+  text-align: justify;
+  margin: 0;
+}
+
+.products-items.brands {
+  display: flex;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.products-items.brands .products-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: calc(16.66% - 30px);
+  position: relative;
+  border: 1px solid #d8d8d8;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  min-height: 129px;
+  transition: 0.2s ease-in;
+}
+
+.delivery-block {
+  width: 43%;
+  border-right: 1px solid #d8d8d8;
+  padding-right: 15px;
+}
+
+.delivery {
+  padding: 30px;
+}
+.delivery .delivery-top {
+  background-image: url("https://iself.shop/images/o-kompanii-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.delivery .delivery-top h1 {
+  font-size: 55px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #fff;
+}
+.delivery .delivery-top p {
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #fff;
+  max-width: 476px;
+  margin: 22px 0;
+}
+.delivery .delivery-top .text-block {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.delivery .delivery-top .text-block .top-text-block {
+  padding: 30px 0 0 30px;
+}
+.delivery .delivery-top .text-block .delivery-text {
+  background: #fff;
+  padding: 30px;
+  min-width: 500px;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000;
+  font-weight: 500;
+  margin-top: auto;
+}
+.delivery .delivery-top .text-block .delivery-text span {
+  color: #186ddf;
+}
+.delivery .delivery-block {
+  padding-left: 30px;
+}
+.delivery .delivery-city {
+  margin-bottom: 30px;
+}
+.delivery .delivery-city h3 {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.delivery .delivery-city .delivery-city-bottom {
+  display: flex;
+  align-items: center;
+}
+.delivery .delivery-city .delivery-city-bottom img {
+  margin-right: 30px;
+}
+.delivery .delivery-city .delivery-city-bottom p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.form {
+  background: #f2f6fa;
+  padding: 30px;
+}
+.form .form-text {
+  font-size: 28px;
+  line-height: 33px;
+  max-width: 677px;
+}
+.form p {
+  font-size: 12px;
+  line-height: 22px;
+}
+.form form .bottom button {
+  background: #186ddf;
+  color: #fff;
+  font-size: 12px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+  text-transform: lowercase;
+  position: relative;
+}
+.form form .bottom .agreement {
+  margin: 20px 0;
+}
+.form form .bottom .agreement .checkbox_block {
+  display: flex;
+  margin-bottom: 30px;
+}
+.form form .bottom .agreement .checkbox_block label {
+  position: relative;
+  padding-left: 26px;
+  cursor: pointer;
+}
+.form form .bottom .agreement a {
+  text-decoration: underline;
+}
+.form form .bottom .form-item {
+  width: 100%;
+  margin-bottom: 50px;
+  position: relative;
+}
+.form form .bottom .form-item input {
+  width: 100%;
+  padding: 6px;
+  min-height: 60px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  color: #555;
+  font-family: "Roboto Light", sans-serif;
+  box-shadow: none;
+  transition: border-color 0.3s ease-in;
+  outline: 0;
+  background: 0 0;
+  font-size: 14px;
+  border-radius: 0;
+}
+.form form .bottom .form-item label {
+  position: absolute;
+  padding: 6px;
+  font-family: "Roboto Light", sans-serif;
+  top: 14px;
+  left: 0;
+  transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  cursor: text;
+  font-size: 12px;
+  line-height: 22px;
+  color: #20252e;
+}
+.form form .top {
+  display: flex;
+  justify-content: space-between;
+}
+.form form .top .form-item {
+  width: 32%;
+  margin-bottom: 50px;
+  position: relative;
+}
+.form form .top .form-item input {
+  width: 100%;
+  padding: 6px;
+  min-height: 60px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  color: #555;
+  font-family: "Roboto Light", sans-serif;
+  box-shadow: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in;
+  outline: 0;
+  background: 0 0;
+  border-radius: 0;
+}
+.form form .top .form-item label {
+  position: absolute;
+  padding: 6px;
+  font-family: "Roboto Light", sans-serif;
+  top: 14px;
+  left: 0;
+  transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  cursor: text;
+  font-size: 12px;
+  line-height: 22px;
+  color: #20252e;
+}
+
+.payment {
+  padding: 30px;
+}
+.payment .order-block {
+  margin-bottom: 100px;
+}
+.payment .order-block .order-text {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.payment .order-block .order-items {
+  display: flex;
+  justify-content: space-between;
+}
+.payment .order-block .order-items .order-item {
+  width: 32%;
+  margin-bottom: 20px;
+}
+.payment .order-block .order-items .order-item .order-item-title {
+  font-size: 13px;
+  line-height: 25px;
+  font-weight: 500;
+}
+.payment .order-block .order-items .order-item .order-info {
+  font-size: 13px;
+  line-height: 20px;
+}
+.payment h4 {
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #186ddf;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.payment .payment-block {
+  margin-bottom: 50px;
+}
+.payment .payment-block .payment-text {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 500;
+}
+.payment .payment-block p {
+  font-size: 13px;
+  line-height: 20px;
+}
+.payment .payment-block p span {
+  display: block;
+}
+
+.service {
+  padding: 30px;
+}
+.service .service-top {
+  background-image: url("https://iself.shop/images/service-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.service .service-top h1 {
+  font-size: 55px;
+  font-weight: 500;
+  color: #fff;
+}
+.service .service-top p {
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #fff;
+  max-width: 476px;
+}
+.service .service-top .service-text {
+  background: #fff;
+  padding: 30px;
+  min-width: 500px;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+.service .service-top .service-text a {
+  font-size: 12px;
+  line-height: 22px;
+  color: #186ddf;
+  text-decoration: underline;
+  font-family: "Roboto Regular", sans-serif;
+  display: inline-block;
+}
+.service .service-top .service-text div {
+  font-size: 22px;
+  line-height: 29px;
+  margin-bottom: 10px;
+}
+.service .service-top .service-text span {
+  display: block;
+  font-size: 15px;
+  line-height: 29px;
+  font-family: "Roboto Regular", sans-serif;
+}
+.service .service-top .text-block {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.service .service-top .text-block .top-text-block {
+  padding: 30px 0 0 30px;
+}
+
+.service-info {
+  padding: 30px;
+}
+.service-info .service-info-title {
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.service-info p {
+  font-size: 13px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.service-block {
+  padding: 30px;
+}
+.service-block .service-items {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -50px;
+  padding: 0 50px;
+}
+.service-block .service-items:after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 120px;
+  right: 120px;
+  background: #000;
+  height: 1px;
+}
+.service-block .service-items .service-item {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+.service-block .service-items .service-item .svg-icon {
+  padding: 10px;
+  border: 2px solid #186ddf;
+  border-radius: 50%;
+  width: 91px;
+  height: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+}
+.service-block .service-items .service-item .svg-icon .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #717171;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-block .service-items .service-item .service-item-description {
+  text-align: center;
+  max-width: 140px;
+  margin: 20px auto 0;
+  line-height: 17px;
+}
+.service-block .service-items .service-items-pare {
+  display: flex;
+  justify-content: space-between;
+  width: 31%;
+}
+
+.contacts {
+  padding: 30px;
+}
+.contacts .contacts-top {
+  background-image: url("https://iself.shop/images/contacts-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.contacts .contacts-top .contacts-text {
+  background: #fff;
+  padding: 30px;
+  min-width: 500px;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000;
+  font-weight: 500;
+  margin-top: auto;
+}
+.contacts .contacts-top .contacts-text span {
+  color: #186ddf;
+}
+.contacts .contacts-top .text-block {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.contacts .contacts-top .text-block .top-text-block {
+  padding: 30px 0 0 30px;
+}
+.contacts .contacts-top h1 {
+  font-size: 55px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #fff;
+}
+.contacts .contacts-top p {
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #fff;
+  max-width: 476px;
+  margin: 35px 0;
+}
+
+.contacts-items {
+  padding: 0 30px;
+  display: flex;
+}
+.contacts-items .contacts-item {
+  width: 24%;
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+.contacts-items .contacts-item .contacts-item-title {
+  font-size: 13px;
+  line-height: 15px;
+  color: #186ddf;
+  margin-bottom: 17px;
+}
+.contacts-items .contacts-item .contacts-item-info {
+  font-size: 16px;
+  line-height: 19px;
+  color: #3e3e3e;
+  font-weight: 500;
+}
+
+.o-kompanii-info {
+  padding: 30px;
+}
+.o-kompanii-info .wrapper {
+  padding-top: 40px;
+  border-top: 1px solid #d8d8d8;
+}
+.o-kompanii-info .wrapper .o-kompanii-address,
+.o-kompanii-info .wrapper .o-kompanii-name,
+.o-kompanii-info .wrapper .o-kompanii-ogrn {
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 30px;
+}
+.o-kompanii-info .wrapper .o-kompanii-address span,
+.o-kompanii-info .wrapper .o-kompanii-name span,
+.o-kompanii-info .wrapper .o-kompanii-ogrn span {
+  font-family: "Roboto Medium", sans-serif;
+}
+
+.products-items.favorites {
+  display: flex;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.products-items.favorites .products-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: calc(16.66% - 30px);
+  position: relative;
+  border: 1px solid #d8d8d8;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  min-height: 129px;
+  transition: 0.2s ease-in;
+}
+.products-items.favorites .products-item:hover .card-bottom {
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+.products-items.favorites .products-item:hover .card-bottom .basket-btn {
+  background: #186ddf;
+  color: #fff;
+  border-radius: 0;
+}
+.products-items.favorites .products-item:hover .card-bottom .basket-btn.in-basket {
+  background: #ff4c00;
+}
+.products-items.favorites .products-item span.clean_wishlist {
+  cursor: pointer;
+  text-align: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
 }/*# sourceMappingURL=App.css.map */

@@ -10,6 +10,11 @@ import Footer from "./components/footer";
 import Catalog from "./pages/Catalog";
 import GoodInfo from './pages/GoodInfo';
 import Basket from './pages/Basket';
+import Brands from './pages/Brands';
+import Delivery from './pages/Delivery';
+import Service from './pages/Service';
+import Contacts from './pages/Contacts';
+import Favorites from './pages/Favorites';
 
 export function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -18,9 +23,6 @@ export function numberWithSpaces(x) {
 function App() {
 
     const { user } = useContext(Context)
-
-    
-
 
     const adminRoutes = [
         {
@@ -49,6 +51,30 @@ function App() {
         {
             path: '/Basket',
             element: <Basket />
+        },
+        {
+            path:'/Brands/',
+            element:<Brands/>
+        },
+        {
+            path:'/Brands/brand/:id',
+            element:<Brands/>
+        },
+        {
+            path:'/delivery',
+            element:<Delivery/>
+        },
+        {
+            path:'/service',
+            element:<Service/>
+        },
+        {
+            path:'/contacts',
+            element:<Contacts/>
+        },
+        {
+            path:'/favorites',
+            element:<Favorites/>
         }
     ]
 

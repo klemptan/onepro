@@ -65,14 +65,19 @@ export default class GoodStore {
 
         this._breadcrumbsLinks = [{ title: 'Главная', link: '/', active: false },
         { title: 'Каталог', link: '/catalog', active: true }]
-        
+        this._brandwithGoods = {goods:[]}
         makeAutoObservable(this)
     }
 
-    setBreadcrumbsLinks(link){
-        this._breadcrumbsLinks = link
+    setBreadcrumbsLinks(links){
+        this._breadcrumbsLinks = links
     }
     
+  
+    
+    setBrandWithGoods(data){
+        this._brandwithGoods = data
+    }
 
     setMainPageSlider(slider) {
         this._mainPageSlider = toJS(slider)
@@ -105,7 +110,6 @@ export default class GoodStore {
         }
         return '';
     }
-
     getCategoryNameById(id){
         for(var item of this._categories){
             if(item.id == id){
@@ -153,5 +157,9 @@ export default class GoodStore {
 
     get breadcrumbsLinks(){
         return this._breadcrumbsLinks
+    }
+
+    get brandWithGoods(){
+        return this._brandwithGoods
     }
 }

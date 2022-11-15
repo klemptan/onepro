@@ -2,14 +2,23 @@ import { makeAutoObservable, toJS } from "mobx"
 
 export default class BasketStore {
     constructor() {
-        let inLS = localStorage.getItem('basketGoods')
-        if (inLS) {
-            this._goods = JSON.parse(inLS)
+        let basketInLS = localStorage.getItem('basketGoods')
+        if (basketInLS) {
+            this._goods = JSON.parse(basketInLS)
         }
         else {
             this._goods = []
         }
         this._totalSum = 0
+
+        let favorites = localStorage.getItem('favorites')
+        if(favorites) {
+            this._favorites = JSON.parse(favorites)
+        }
+        else {
+            this._favorites = []
+        }
+
         makeAutoObservable(this)
     }
 
@@ -54,6 +63,35 @@ export default class BasketStore {
     empty() {
         this._goods = []
         localStorage.setItem('basketGoods', JSON.stringify(this._goods))
+    }
+
+    isFavorite(goodId){
+        for(var i=0;i<this._favorites.length;i++){
+            if(this._favorites[i].id==goodId) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    setFavoriteGood(good) {
+        this._favorites.push(good)
+        localStorage.setItem('favorites', JSON.stringify(this._favorites))
+    }
+    unsetFavoriteGood(goodId){
+        let index=-1;
+        for(var i=0;i<this._favorites.length;i++){
+            if(this._favorites[i].id==goodId) {
+                index = i;
+                break;
+            }
+        }
+        this._favorites.splice(index, 1)
+        localStorage.setItem('favorites', JSON.stringify(this._favorites))
+    }
+
+    get favorites(){
+        return this._favorites
     }
 
     get totalCount() {

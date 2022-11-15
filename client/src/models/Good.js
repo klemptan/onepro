@@ -15,6 +15,8 @@ export class Good {
             if (good.brand) {
                 this.brand = new ListModel(good.brand)
             }
+            this.brandId=good.brandId
+            this.categoryId=good.categoryId
             this.price = good.price
             if (good.good_images) {
                 this.good_images = []

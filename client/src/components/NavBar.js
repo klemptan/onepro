@@ -20,7 +20,7 @@ const NavBar = () => {
             <li><a itemProp="url" href="/catalog/"><span itemProp="name">Каталог</span></a></li>
 
 
-            <li><a itemProp="url" href="/complects/"><span itemProp="name">Самообслуживание</span></a></li>
+            {/* <li><a itemProp="url" href="/complects/"><span itemProp="name">Самообслуживание</span></a></li> */}
 
 
             <li><a itemProp="url" href="/brands/"><span itemProp="name">Поиск по производителю</span></a></li>

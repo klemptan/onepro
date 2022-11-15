@@ -16,6 +16,11 @@ export const fetchOneCategory = async (id)=>{
     return data
 }
 
+export const fetchBrandWitGoods = async(id)=>{
+    const {data} = await $host.get('api/brand/'+id)
+    return data
+}
+
 export const fetchGoods = async (categoryId)=>{
     const {data} = await $host.get('api/good?categoryId='+(categoryId||0))
     return data
