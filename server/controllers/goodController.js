@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer')
 const Downloader = require("nodejs-file-downloader");
 const path = require('path')
 const uuid = require('uuid');
+const { Op } = require('sequelize')
 
 class GoodController {
     async parseGoods(req, res, next) {
@@ -652,7 +653,7 @@ class GoodController {
                     const brandName = specifications[0]
                     if (brandName == '') brandName = "не указан"
                     let description = (await page.$('#characteristics')) || "";
-                    if(description!=''){
+                    if (description != '') {
                         description = await page.$eval('#description div', el => el.innerHTML)
                     }
                     const price = await page.$eval('.prices-item-name.price-value', el => el.innerHTML.replace(/[^0-9.]/g, ''))
@@ -760,6 +761,32 @@ class GoodController {
                     ]
                 })
             }
+            return res.json(goods)
+        } catch (e) {
+            next(e)
+        }
+    }
+
+
+    async getByQuery(req, res, next) {
+        try {
+            const { query } = req.params
+            const goods = await Good.findAll({
+                where: {
+                    [Op.or]: [
+                        {
+                            model: {
+                                [Op.like]: `%${query}%`
+                            }
+                        },
+                        {
+                            description: {
+                                [Op.like]: `%${query}%`
+                            }
+                        }
+                    ]
+                }
+            })
             return res.json(goods)
         } catch (e) {
             next(e)

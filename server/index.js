@@ -11,7 +11,18 @@ const PORT = process.env.SERVER_PORT || 5000
 
 const app = express()
 
-app.use(cors())
+var allowlist = ['http://onepro.tk', 'https://onepro.tk']
+var corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
+}
+
+app.use(cors(corsOptionsDelegate))
 app.use(express.json())
 app.use(fileUpload({}))
 app.use(express.static(path.resolve(__dirname,'static')))

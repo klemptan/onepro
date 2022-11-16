@@ -6,15 +6,15 @@ const Header = observer(() => {
 
     const [searchActive, setSearchActive] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
-
     const { basket } = useContext(Context)
+    const navigate = useNavigate();
 
     const goToSearch = () => {
         if (!searchActive) {
             setSearchActive(true)
         }
         else {
-            console.log('work')
+            navigate("/search/"+searchQuery)   
         }
     }
 

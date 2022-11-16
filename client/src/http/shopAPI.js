@@ -41,3 +41,8 @@ export const fetchBrands = async ()=>{
     const {data} = await $host.get('api/brand/')
     return data
 }
+
+export const fetchSearch = async(query)=>{
+    const {data} = await $host.get('api/good/search/'+query)
+    return data
+}

@@ -2869,14 +2869,14 @@ aside {
 
     h1 {
       font-size: 55px;
-      font-weight:500;
+      font-weight: 500;
       color: #fff;
     }
 
     p {
       font-size: 22px;
       line-height: 35px;
-      font-weight:500;
+      font-weight: 500;
       color: #fff;
       max-width: 476px;
     }
@@ -2888,7 +2888,7 @@ aside {
       font-size: 30px;
       line-height: 35px;
       color: #000;
-      font-weight:500;
+      font-weight: 500;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -2946,7 +2946,7 @@ aside {
   .service-info-title {
     font-size: 13px;
     line-height: 22px;
-    font-weight:500;
+    font-weight: 500;
   }
 
   p {
@@ -3065,7 +3065,7 @@ aside {
       font-size: 30px;
       line-height: 35px;
       color: #000;
-      font-weight:500;
+      font-weight: 500;
       margin-top: auto;
 
       span {
@@ -3093,17 +3093,17 @@ aside {
     h1 {
       font-size: 55px;
       line-height: 35px;
-      font-weight:500;
+      font-weight: 500;
       color: #fff;
     }
 
     p {
       font-size: 22px;
       line-height: 35px;
-      font-weight:500;
+      font-weight: 500;
       color: #fff;
       max-width: 476px;
-      margin:35px 0;
+      margin: 35px 0;
     }
   }
 }
@@ -3130,7 +3130,7 @@ aside {
       font-size: 16px;
       line-height: 19px;
       color: #3e3e3e;
-      font-weight:500;
+      font-weight: 500;
     }
   }
 }
@@ -3157,58 +3157,99 @@ aside {
 }
 
 .products-items {
-&.favorites {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 30px;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 0 -15px;
-  .products-item {
-    text-decoration: none;
+  &.favorites {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: calc(16.66% - 30px);
-    position: relative;
-    border: 1px solid #d8d8d8;
-    border-radius: 0;
-    overflow: hidden;
-    background: #fff;
-    margin-bottom: 30px;
-    margin-left: 15px;
-    margin-right: 15px;
-    min-height: 129px;
-    -webkit-transition: .2s ease-in;
-    transition: .2s ease-in;
-    &:hover{
-      .card-bottom {
-        opacity: 1;
-        -webkit-transition: .2s ease-in;
-        transition: .2s ease-in;
-        .basket-btn {
-          background: #186ddf;
-          color: #fff;
-          border-radius: 0;
-          &.in-basket {
-            background: #ff4c00;
+    padding: 30px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    .products-item {
+      text-decoration: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: calc(16.66% - 30px);
+      position: relative;
+      border: 1px solid #d8d8d8;
+      border-radius: 0;
+      overflow: hidden;
+      background: #fff;
+      margin-bottom: 30px;
+      margin-left: 15px;
+      margin-right: 15px;
+      min-height: 129px;
+      -webkit-transition: .2s ease-in;
+      transition: .2s ease-in;
+
+      &:hover {
+        .card-bottom {
+          opacity: 1;
+          -webkit-transition: .2s ease-in;
+          transition: .2s ease-in;
+
+          .basket-btn {
+            background: #186ddf;
+            color: #fff;
+            border-radius: 0;
+
+            &.in-basket {
+              background: #ff4c00;
+            }
+          }
         }
       }
+
+      span.clean_wishlist {
+        cursor: pointer;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 10px;
+      }
     }
-    }
-    span.clean_wishlist {
-      cursor: pointer;
-      text-align: right;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      padding: 10px;
   }
 }
-}
+
+.search-page-container {
+  padding: 30px;
+
+  .title-search {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 30px;
+  }
+
+  .search-result {
+    margin-bottom: 30px;
+
+    .search-item {
+      margin: 0 0 1.5em;
+      padding: 0 0 1.5em;
+      border-bottom: 1px solid;
+      border-color: #d8d8d8;
+
+      h4 {
+        font-size: 140%;
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 1.3em 0 0.4em;
+      }
+
+      .search-preview {
+        color: #6f6f6f;
+        margin: 15px 0;
+      }
+    }
+  }
+
 }

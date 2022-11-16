@@ -15,6 +15,7 @@ import Delivery from './pages/Delivery';
 import Service from './pages/Service';
 import Contacts from './pages/Contacts';
 import Favorites from './pages/Favorites';
+import Search from './pages/Search';
 
 export function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -75,6 +76,10 @@ function App() {
         {
             path:'/favorites',
             element:<Favorites/>
+        },
+        {
+            path:'/search/:query',
+            element:<Search/>
         }
     ]
 
